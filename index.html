@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="width: 100%; margin: 0; padding: 0">
+    <div class="main_container">
+      <!-- ცესკოს ლოგო და სათაური -->
+      <div class="gdream_logo_title">
+        <img
+          class="gdream_logo"
+          src="./images/glogo.png"
+          alt="gdream_logo"
+        />
+      </div>
+
+      <!-- არხების ლისტი -->
+      <div class="gdream_scrolling_container">
+        <div class="gdream_channels_wrapper">
+          <!-- პირველი რიგი -->
+          <div class="gdream_channels_row"></div>
+
+          <!-- მეორე რიგი -->
+          <div class="gdream_channels_row"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- სტილები -->
+    <style>
+      @font-face {
+        font-family: "roboto_geo";
+        src: url("./ROBOTO__GEO_MT-WEBFONT.ttf");
+      }
+
+      .main_container {
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        padding: 0px 0px 0px 70px;
+
+        background-color: #015AA7;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .gdream_logo_title {
+        display: flex;
+        flex-direction: column;
+        gap: 52px;
+        align-items: center;
+      }
+
+      .gdream_logo {
+        width: auto;
+        height: auto;
+      }
+
+      .gdream_scrolling_container {
+        width: 100%;
+        height: 350px;
+        overflow-x: scroll;
+        display: flex;
+        align-items: center;
+        padding-right: 30px;
+      }
+
+      .gdream_scrolling_container::-webkit-scrollbar {
+        height: 5px;
+      }
+
+      .gdream_scrolling_container::-webkit-scrollbar-thumb {
+        background-color: #abb2ac;
+        border-radius: 6px;
+      }
+
+      .gdream_scrolling_container::-webkit-scrollbar-track {
+        background-color: inherit;
+      }
+
+      .gdream_channels_wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .gdream_channels_row {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .gdream_channel_block {
+        width: 159.73px;
+        height: 120px;
+        border-radius: 11px;
+        background: hsla(0, 0%, 100%, 0.4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+      }
+
+      .gdream_channel_block_logo_background {
+        width: 44px;
+        height: 50px;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 24px;
+      }
+
+      .gdream_channel_block_logo {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .gdream_channel_block p {
+        font-family: "roboto_geo" !important;
+        color: #121212;
+        width: 120px;
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin: 10px 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    </style>
+
+    <!-- ჯავასკრიპტი -->
+    <script>
+      const channelListArray = [
+        {
+          logo: "images/channelico.png",
+          name: "პირველი TV",
+          link: "https://www.myvideo.ge/tv/pirvelitv",
+        },
+        {
+          logo: "images/rustavi2.png",
+          name: "რუსთავი 2",
+          link: "https://www.myvideo.ge/tv/rustavi2hqnew",
+        },
+        {
+          logo: "images/gpbhd.png",
+          name: "პირველი არხი HD",
+          link: "https://www.myvideo.ge/tv/gpbhd",
+        },
+        {
+          logo: "images/euronews.png",
+          name: "EuroNews Georgia",
+          link: "https://www.myvideo.ge/tv/euronewsgeorgia",
+        },
+        {
+          logo: "images/imedi.png",
+          name: "იმედი HD",
+          link: "https://www.myvideo.ge/tv/imedihd",
+        },
+        {
+          logo: "images/silk.png",
+          name: "სილქ უნივერსალი",
+          link: "https://www.myvideo.ge/tv/silk_sport4",
+        },
+        {
+          logo: "images/posttv.png",
+          name: "პოსTV",
+          link: "https://www.myvideo.ge/tv/postv",
+        },
+        {
+          logo: "images/formula.png",
+          name: "ფორმულა",
+          link: "https://www.myvideo.ge/tv/formula",
+        },
+        {
+          logo: "images/caucasus.png",
+          name: "კავკასია",
+          link: "https://www.myvideo.ge/tv/caucasia",
+        },
+        {
+          logo: "images/palitranews.png",
+          name: "PALITRANEWS",
+          link: "https://www.myvideo.ge/tv/palitra",
+        },
+        {
+          logo: "images/adjara.png",
+          name: "აჭარა",
+          link: "https://www.myvideo.ge/tv/adjara",
+        },
+        {
+          logo: "images/maestro.png",
+          name: "მაესტრო",
+          link: "https://www.myvideo.ge/tv/maestro?id=8675453423",
+        },
+        {
+          logo: "images/radioImedi.png",
+          name: "რადიო იმედი",
+          link: "https://www.myvideo.ge/tv/radioimedi",
+        },
+        {
+          logo: "images/obieqtivi.png",
+          name: "ობიექტივი",
+          link: "https://www.myvideo.ge/tv/obiektivi",
+        }
+      ];
+
+      const firstRow = document.querySelector(".gdream_channels_row:first-child");
+      const secondRow = document.querySelector(".gdream_channels_row:last-child");
+      
+      const halfLength = Math.ceil(channelListArray.length / 2);
+      const firstHalf = channelListArray.slice(0, halfLength);
+      const secondHalf = channelListArray.slice(halfLength);
+
+      firstHalf.forEach((item) => {
+        const channelBlock = `<a href="${item.link}">
+                                <div class="gdream_channel_block">
+                                    <div class="gdream_channel_block_logo_background">
+                                        <img loading="lazy" src="${item.logo}" class="gdream_channel_block_logo" alt="gdream block channel logo" />
+                                    </div>
+                                    <p>${item.name}</p>
+                                </div>
+                              </a>`;
+        firstRow.innerHTML += channelBlock;
+      });
+
+      secondHalf.forEach((item) => {
+        const channelBlock = `<a href="${item.link}">
+                                <div class="gdream_channel_block">
+                                    <div class="gdream_channel_block_logo_background">
+                                        <img loading="lazy" src="${item.logo}" class="gdream_channel_block_logo" alt="gdream block channel logo" />
+                                    </div>
+                                    <p>${item.name}</p>
+                                </div>
+                              </a>`;
+        secondRow.innerHTML += channelBlock;
+      });
+    </script>
+  </body>
+</html>
